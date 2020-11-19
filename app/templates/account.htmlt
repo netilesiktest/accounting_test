@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" scroll="0">
+	<head>		
+		<title>Accounting System</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" type="text/css" media="all" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" media="all" href="/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" media="all" href="/css/datatables.min.css" />
+
+		<script src="/js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/datatables.min.js"></script> 
+	</head>
+
+	<body>
+                
+        <div id="LOADING_WND_MODAL" class="general_modal" >
+            <div class="modal-head">
+                <h1 class="modal-title">Request is processing ... </h1>
+            </div>
+
+            <div class="modal-body">
+                <div id="LOADING_WND_MODAL_BODY">
+                    <div class="loading">
+                        Please wait
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="ADD_WND_MODAL" class="general_modal" >
+            <div class="modal-head">
+                <h1 class="modal-title">Add New Operation </h1>
+            </div>
+
+            <div class="modal-body">
+                <div id="add_modal">
+
+                   <div class="row">
+                       <div>Operation Type</div>
+                       <div>
+                           <select id="op_type">
+                               <option value="credit">credit</option>
+                               <option value="debit">debit</option>
+                           </select>
+                       </div>
+                   </div>
+
+                   <div class="row">
+                        <div>Amount</div>
+                        <div>
+                            <input id="amount" type="text" value="" placeholder="enter amount here">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>Date</div>
+                        <div>
+                            <input id="date" type="text" value="{{CODE:: render::formatdatetime(); }}" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>Description</div>
+                        <div>
+                            <input id="descr" type="text" value="" placeholder="add description here">
+                        </div>
+                    </div>
+
+                    <div class="modal_btn">
+                        <button id="addrec">Add Record</button>
+                        <button id="cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+		<div class="global_container">
+			<div class="top_header">
+                Accounting System
+			</div>
+
+
+			<div class="header">
+                <div class="bal_head">
+                    Current Balance: <div id="bal">loading...</div>
+                </div>
+				<div class="buttons">
+                    <button id="debit">Add Debit</button>
+                    <button id="credit">Add Credit</button>
+                    <button id="refresh">Refresh</button>
+				</div>
+			</div>
+
+            
+            <div class="table">
+                <table id="dt">
+                    <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>Operation</td>
+                            <td>Description</td>
+                            <td>Amount</td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="data">
+
+                    </tbody>
+                </table>
+            </div>
+		
+
+			<div class="global_footer">
+				<div class="copyright">
+					Copyright &#9400; iLesik
+				</div>
+			</div>
+        </div>
+        
+        <script type="text/javascript" src="/js/main.js"></script> 
+	</body>
+
+
+
+</html>
+
+
+

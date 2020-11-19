@@ -1,0 +1,87 @@
+
+#LOADING_WND_MODAL, #ADD_WND_MODAL {
+    display: none;
+    position: absolute;
+    top: 50%;
+    border: 1px solid gray;
+    width: 500px;
+    left: 50%;
+    z-index: 10000;
+    background: white;
+    transform: translate(-50%, -50%);
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    padding: 3px;
+}
+
+.row > div {  
+    text-align: left;
+}
+
+.modal_btn {
+    padding-bottom: 5px;
+}
+
+.modal_btn, .loading {
+    text-align: center;
+}
+
+.row > div:nth-child(1) {
+    width: 40%;
+}
+
+.row > div:nth-child(2) {
+    width: 60%;
+}
+
+.top_header {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+}
+
+.bal_head {
+    display: flex;
+    font-size: +1;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.bal_head > div {
+    
+    padding: 0 5px;
+}
+
+
+#dt {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#dt thead tr td {
+    font-weight: bold;
+    font-size: +1;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    cursor: pointer;
+}
+
+tr.credit td {
+    background-color: lightcoral;
+}
+
+tr.debit td {
+    background-color: lightgreen;
+}
